@@ -86,7 +86,7 @@ define([
             //q_2.where = "OBJECTID = 2";
 
         //Query layer 3 - Heavy Industrial Uses Permitted
-        var qt_3 = new QueryTask("https://gis.cityoftacoma.org/arcgis/rest/services/PDS/DARTzoning/MapServer/13");  
+        var qt_3 = new QueryTask("https://gis.cityoftacoma.org/arcgis/rest/services/PDS/DARTzoning/MapServer/14");  
         var q_3 = new Query();
             q_3.where = "(BASE_ZONE = 'PMI') OR (BASE_ZONE = 'M2') OR (BASE_ZONE = 'WR') OR (BASE_ZONE = 'S1a') OR (BASE_ZONE = 'S7') OR (BASE_ZONE = 'S8') OR (BASE_ZONE = 'S9') OR (BASE_ZONE = 'S10') OR (BASE_ZONE = 'S11')";
 
