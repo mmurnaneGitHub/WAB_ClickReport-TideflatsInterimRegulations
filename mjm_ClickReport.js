@@ -88,13 +88,13 @@ define([
   //Query layer 3 - Heavy Industrial Uses Permitted
   var qt_3 = new QueryTask("https://gis.cityoftacoma.org/arcgis/rest/services/PDS/DARTzoning/MapServer/14");
   var q_3 = new Query();
-  q_3.where = "(BASE_ZONE = 'PMI') OR (BASE_ZONE = 'M2') OR (BASE_ZONE = 'WR') OR (BASE_ZONE = 'S1a') OR (BASE_ZONE = 'S7') OR (BASE_ZONE = 'S8') OR (BASE_ZONE = 'S9') OR (BASE_ZONE = 'S10') OR (BASE_ZONE = 'S11')";
+  q_3.where = "(BaseZone = 'PMI') OR (BaseZone = 'M2') OR (BaseZone = 'WR') OR (BaseZone = 'S1a') OR (BaseZone = 'S7') OR (BaseZone = 'S8') OR (BaseZone = 'S9') OR (BaseZone = 'S10') OR (BaseZone = 'S11')";
 
   //Query layer 4 - Non-Industrial Uses
   var qt_4 = new QueryTask("https://gis.cityoftacoma.org/arcgis/rest/services/PDS/DARTlabels/MapServer/3");
   var q_4 = new Query();
   //\\Geobase-win\CED\GADS\R2018\R004\NonIndustrialUses.mxd
-  q_4.where = "(BASE_ZONE = 'PMI') OR (OBJECTID = 3732) OR (OBJECTID = 3870) OR (OBJECTID = 4032) OR (OBJECTID = 4101) OR (OBJECTID = 4318) OR (OBJECTID = 4360)";  //PMI (only occurs in Port) and M2 in Port M/IC
+  q_4.where = "(BaseZone = 'PMI') OR (OBJECTID = 228) OR (OBJECTID = 237) OR (OBJECTID = 231) OR (OBJECTID = 227) OR (OBJECTID = 236) OR (OBJECTID = 232)";  //PMI (only occurs in Port) and M2 in Port M/IC
 
   //Set all common query parameters
   qparcel.returnGeometry = true;
@@ -234,9 +234,9 @@ define([
                 r += "<div style='clear:both;'><hr color='#ACB1DB'></div><b>Heavy Industrial Uses</b>: <br>";
                 for (var i = 0; i < results[2].features.length; i++) {  //loop thru all records (multiple zonings) - Add zoning(s) to details
                   if (i == 0) {
-                    r += "Parcel Zoning: " + results[2].features[i].attributes.BASE_ZONE;
+                    r += "Parcel Zoning: " + results[2].features[i].attributes.BaseZone;
                   } else {
-                    r += "; " + results[2].features[i].attributes.BASE_ZONE;
+                    r += "; " + results[2].features[i].attributes.BaseZone;
                   }
                 }
                 r += "<br>These interim regulations pause the establishment of the following heavy industrial uses: Coal terminals and bulk storage facilities; Oil or other liquefied fossil fuel terminals, bulk storage, manufacturing, production, processing or refining; Chemical Manufacturing; Mining and quarrying; and Smelting. These interim regulations do not apply to existing uses, which may expand under existing permit procedures and development standards.";
